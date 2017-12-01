@@ -103,6 +103,9 @@ nav {
   width: $rightColW;
   height: 90vh;
   background-color: wheat;
+  input {
+    z-index: 2;
+  }
 }
 
 .bpList{
@@ -113,5 +116,6 @@ nav {
   }
   h3 {
     display: inline-block;
+    width: $leftColW - 10vw;
   }
 }

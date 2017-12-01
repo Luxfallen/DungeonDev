@@ -207,7 +207,7 @@ var BlueprintList = function BlueprintList(props) {
     }
     return React.createElement(
       'div',
-      { 'class': 'bpListItem', 'data-key': blueprint._id, 'data-walls': blueprint.walls, onClick: handleBlueprint },
+      { 'class': 'bpListItem', 'data-key': blueprint._id, 'data-walls': blueprint.walls },
       React.createElement(
         'h1',
         { 'class': 'bpDelete', onClick: handleBlueprintDel },
@@ -215,7 +215,7 @@ var BlueprintList = function BlueprintList(props) {
       ),
       React.createElement(
         'h3',
-        { 'class': 'bpNodeName' },
+        { 'class': 'bpNodeName', onClick: handleBlueprint },
         blueprint.name
       )
     );
@@ -271,7 +271,7 @@ var saveBlueprint = function saveBlueprint(e) {
   var token = $('#csrf').serialize();
   var obj = '_id=' + key + '&' + token + '&walls=' + walls;
   sendAjax('POST', '/editor', obj, function (msg) {
-    handleError(msg);
+    //handleError(msg);
   });
 };
 

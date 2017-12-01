@@ -165,9 +165,9 @@ const BlueprintList = (props) => {
       document.body.appendChild(img);
     }
     return (
-      <div class="bpListItem" data-key={blueprint._id} data-walls={blueprint.walls} onClick={handleBlueprint}>
+      <div class="bpListItem" data-key={blueprint._id} data-walls={blueprint.walls}>
         <h1 class="bpDelete" onClick={handleBlueprintDel}> X </h1>
-        <h3 class="bpNodeName">{blueprint.name}</h3>
+        <h3 class="bpNodeName" onClick={handleBlueprint}>{blueprint.name}</h3>
       </div>
     );
   });
@@ -224,7 +224,7 @@ const saveBlueprint = (e) => {
   const token = $('#csrf').serialize();
   const obj = `_id=${key}&${token}&walls=${walls}`;
   sendAjax('POST', '/editor', obj, (msg) => {
-    handleError(msg);
+    //handleError(msg);
   });
 }
 
