@@ -12,7 +12,9 @@ const router = (app) => {
   app.get('/editor', mid.requiresLogin, controllers.Blueprint.editor);
   app.post('/editor', mid.requiresLogin, controllers.Blueprint.makeBp);
   app.delete('/editor', mid.requiresLogin, controllers.Blueprint.deleteBp);
-  app.get('/', mid.requiresSecure, mid.requiresLogout, controllers.Account.renderLogin);
+  app.get('/donate', mid.requiresSecure, controllers.renderDonate);
+  app.get('/about', controllers.renderAbout);
+  app.get('/*', mid.requiresSecure, mid.requiresLogout, controllers.Account.renderLogin);
 };
 
 module.exports = router;

@@ -30,12 +30,13 @@ const BlueprintSchema = new mongoose.Schema({
     trim: true,
   },
   walls: {
-    // type: [Wall],
     /*
      * A one dimensional array of strings will allow me to stringify the data
      * I need and allow me to avoid making the custom validations that a mixed array
      * of schemata would require.
      * This may be turned into a singular string later if bitpacking is successful.
+     *
+     * Alternatively, it can also be used to store a canvasElement.toDataUrl
      */
     type: String,
     default: null,

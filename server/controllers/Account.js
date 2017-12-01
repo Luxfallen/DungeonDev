@@ -27,7 +27,7 @@ const login = (request, response) => {
 
 const logout = (request, response) => {
   request.session.destroy();
-  response.redirect('/');
+  response.redirect('/donate');
 };
 
 const signup = (request, response) => {
